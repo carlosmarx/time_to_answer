@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      admin:
+        one: Administrador
+        other: Administradores
+      profile:
+        one: Perfil
+        other: Perfis
+    attributes:
+      created_at: Cadatrado em
+      updated_at: Atualizado em
+      admin:
+        id: Código
+        email: Email
+      profile:
+        id: Código
+        email: Email
+      # will translate User attribute "login" as "Handle"
