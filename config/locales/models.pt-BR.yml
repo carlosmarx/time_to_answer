@@ -4,16 +4,16 @@ pt-BR:
       admin:
         one: Administrador
         other: Administradores
-      profile:
-        one: Perfil
-        other: Perfis
+      user:
+        one: Usuário
+        other: Usuários
     attributes:
       created_at: Cadatrado em
       updated_at: Atualizado em
       admin:
         id: Código
         email: Email
-      profile:
+      user:
         id: Código
         email: Email
       # will translate User attribute "login" as "Handle"
