@@ -39,9 +39,10 @@
 
               <!-- Nav Item - Dashboard -->
               <li class="nav-item">
-                  <a class="nav-link" href="index.html">
-                      <i class="fas fa-fw fa-tachometer-alt"></i>
-                      <span>Dashboard</span></a>
+                <%= link_to admins_backoffice_welcome_index_path, class:"nav-link" do %>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                <% end %>
               </li>
 
               <!-- Divider -->
@@ -56,13 +57,15 @@
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                       aria-expanded="true" aria-controls="collapseTwo">
+
                       <i class="fas fa-fw fa-users"></i>
                       <span>Administradores</span>
                   </a>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                       <div class="bg-white py-2 collapse-inner rounded">
                           <h6 class="collapse-header">Gerenciar Admins</h6>
-                          <a class="collapse-item" href="#">Listar</a>
+                            
+                        <%= link_to "Listar Admins", admins_backoffice_admins_index_path, class:"collapse-item" %>
                           <a class="collapse-item" href="cards.html">Cadastrar novo</a>
                       </div>
                   </div>
