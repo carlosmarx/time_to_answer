@@ -1,3 +1,5 @@
+DEFAULT_PASSWD = 123456
+
 namespace :dev do
   desc "Configura o ambiente de desenvolvimento."
   task setup: :environment do
@@ -6,6 +8,7 @@ namespace :dev do
       show_spinner("Criando banco de dados", "Banco criado com sucesso!!") { %x(rails db:create) }
       show_spinner("Executando migrations", "Migrations executadas com sucesso!") { %x(rails db:migrate) }
       %x(rails dev:add_default_admin)
+      %x(rails dev:add_extra_admins)
       %x(rails dev:add_default_user)
     else 
       puts "Você não está em ambiente de desenvolvimento"
@@ -17,9 +20,22 @@ namespace :dev do
     show_spinner("Cadastrando Admin") do
       Admin.create!(
         email: "admin@mail.com",
-        password: 123456,
-        password_confirmation: 123456
+        password: DEFAULT_PASSWD,
+        password_confirmation: DEFAULT_PASSWD
       )
+    end
+  end
+
+  desc "Add administradores extras"
+  task add_extra_admins: :environment do
+    show_spinner("Cadastrando Admins extras") do
+      10.times do |i|
+        Admin.create!(
+          email: Faker::Internet.email,
+          password: DEFAULT_PASSWD,
+          password_confirmation: DEFAULT_PASSWD
+        )
+      end
     end
   end
 
@@ -28,8 +44,8 @@ namespace :dev do
     show_spinner("Cadastrando Usuário") do
       User.create!(
         email: "user@mail.com",
-        password: 123456,
-        password_confirmation: 123456
+        password: DEFAULT_PASSWD,
+        password_confirmation: DEFAULT_PASSWD
       )
     end
   end
