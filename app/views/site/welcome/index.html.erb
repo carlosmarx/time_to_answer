@@ -6,5 +6,8 @@
 <% elsif user_signed_in? %>    
     Usuário Logado - <%= current_user.email %>
 <% else %>
-    Fazer Login
+    Fazer Login como: 
+    <%= link_to "Admin", admins_backoffice_admins_path %> 
+        ou 
+    <%= link_to "Usuário", users_backoffice_welcome_index_path %>
 <% end %>

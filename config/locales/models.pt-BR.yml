@@ -13,7 +13,11 @@ pt-BR:
       admin:
         id: Código
         email: Email
+        password: Senha
+        password_confirmation: Confirmação de Senha
       user:
         id: Código
         email: Email
+        password: Senha
+        password_confirmation: Confirmação de Senha
       # will translate User attribute "login" as "Handle"
