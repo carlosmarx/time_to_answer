@@ -349,6 +349,18 @@
       <!-- Bootstrap core JavaScript-->
       <%= javascript_pack_tag 'application' %>
       <%= javascript_pack_tag 'sb-admin-2' %>
+      
+      <% if notice %>
+        <%= javascript_tag do %>
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: '<%= notice %>',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        <% end %>
+      <% end %>
 
       <!-- Core plugin JavaScript-->
       <%# <script src="vendor/jquery-easing/jquery.easing.min.js"></script> %>
