@@ -29,7 +29,7 @@
               <!-- Sidebar - Brand -->
               <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                   <div class="sidebar-brand-icon rotate-n-15">
-                      <i class="fas fa-laugh-question"></i>
+                      <i class="fas fa-question-circle"></i>
                   </div>
                   <div class="sidebar-brand-text mx-3">Time <sup>to</sup> Answer</div>
               </a>
@@ -55,18 +55,35 @@
 
               <!-- Nav Item - Pages Collapse Menu -->
               <li class="nav-item">
-                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                      aria-expanded="true" aria-controls="collapseTwo">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmins"
+                      aria-expanded="true" aria-controls="collapseAdmins">
 
                       <i class="fas fa-fw fa-users"></i>
                       <span>Administradores</span>
                   </a>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div id="collapseAdmins" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                       <div class="bg-white py-2 collapse-inner rounded">
                           <h6 class="collapse-header">Gerenciar Admins</h6>
                             
                         <%= link_to "Listar Admins", admins_backoffice_admins_path, class:"collapse-item" %>
-                          <a class="collapse-item" href="cards.html">Cadastrar novo</a>
+                          <a class="collapse-item" href="#">Cadastrar novo</a>
+                      </div>
+                  </div>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubjects"
+                      aria-expanded="true" aria-controls="collapseSubjects">
+
+                      <i class="fas fa-fw fa-book"></i>
+                      <span>Assuntos/Áreas</span>
+                  </a>
+                  <div id="collapseSubjects" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                      <div class="bg-white py-2 collapse-inner rounded">
+                          <h6 class="collapse-header">Gerenciar Assuntos</h6>
+                            
+                        <%= link_to "Listar Assuntos", admins_backoffice_subjects_path, class:"collapse-item" %>
+                          <a class="collapse-item" href="#">Cadastrar novo</a>
                       </div>
                   </div>
               </li>
