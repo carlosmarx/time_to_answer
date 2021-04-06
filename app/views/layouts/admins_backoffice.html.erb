@@ -88,6 +88,23 @@
                   </div>
               </li>
 
+              <li class="nav-item">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuestions"
+                      aria-expanded="true" aria-controls="collapseQuestions">
+
+                      <i class="fas fa-fw fa-question"></i>
+                      <span>Perguntas</span>
+                  </a>
+                  <div id="collapseQuestions" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                      <div class="bg-white py-2 collapse-inner rounded">
+                          <h6 class="collapse-header">Gerenciar Perguntas</h6>
+                            
+                        <%= link_to "Listar Perguntas", admins_backoffice_questions_path, class:"collapse-item" %>
+                          <a class="collapse-item" href="#">Cadastrar novo</a>
+                      </div>
+                  </div>
+              </li>
+
              
               <!-- Divider -->
               <hr class="sidebar-divider d-none d-md-block">
