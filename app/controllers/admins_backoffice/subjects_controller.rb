@@ -4,7 +4,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackoffice::AdminController
     
   def index
     # @subjects = Subject.all.page(params[:page]).per(5)
-    @subjects = Subject.all.page params[:page]
+    @subjects = Subject.all.order(:description).page params[:page]
   end
 
   def new

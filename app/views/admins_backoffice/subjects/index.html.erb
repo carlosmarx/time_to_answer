@@ -18,7 +18,7 @@
                         <th>Id</th>
                         <th>Descrição</th>
                         <th>
-                          <%= link_to admins_backoffice_subjects_path,  class:"btn btn-success btn-icon-split" do %>
+                          <%= link_to new_admins_backoffice_subject_path,  class:"btn btn-success btn-icon-split" do %>
                               <span class="icon text-white-50">
                                   <i class="fas fa-plus"></i>
                               </span>
@@ -32,12 +32,12 @@
                         <th>Id</th>
                         <th>Descrição</th>
                         <th>
-                          <a href="#" class="btn btn-success btn-icon-split">
+                           <%= link_to new_admins_backoffice_subject_path,  class:"btn btn-success btn-icon-split" do %>
                               <span class="icon text-white-50">
                                   <i class="fas fa-plus"></i>
                               </span>
                               <span class="text">Add Assunto/Área</span>
-                          </a>
+                          <% end %>
                         </th>
                     </tr>
                 </tfoot>

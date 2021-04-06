@@ -32,12 +32,12 @@
                         <th>Id</th>
                         <th>Email</th>
                         <th>
-                          <a href="#" class="btn btn-success btn-icon-split">
+                          <%= link_to new_admins_backoffice_admin_path,  class:"btn btn-success btn-icon-split" do %>
                               <span class="icon text-white-50">
                                   <i class="fas fa-plus"></i>
                               </span>
                               <span class="text">Add Admin</span>
-                          </a>
+                          <% end %>
                         </th>
                     </tr>
                 </tfoot>
