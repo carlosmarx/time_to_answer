@@ -15,8 +15,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Descrição</th>
+                        <th><%= translate_attribute(@subjects, :id) %></th>
+                        <th><%= translate_attribute(@subjects, :description) %></th>
                         <th>
                           <%= link_to new_admins_backoffice_subject_path,  class:"btn btn-success btn-icon-split" do %>
                               <span class="icon text-white-50">
@@ -29,8 +29,8 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Id</th>
-                        <th>Descrição</th>
+                        <th><%= translate_attribute(@subjects, :id) %></th>
+                        <th><%= translate_attribute(@subjects, :description) %></th>
                         <th>
                            <%= link_to new_admins_backoffice_subject_path,  class:"btn btn-success btn-icon-split" do %>
                               <span class="icon text-white-50">

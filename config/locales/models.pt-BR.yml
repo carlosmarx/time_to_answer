@@ -7,6 +7,15 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      subject:
+        one: Assunto
+        other: Assuntos
+      question:
+        one: Pergunta
+        other: Perguntas
+      answer:
+        one: Resposta
+        other: Respostas
     attributes:
       created_at: Cadatrado em
       updated_at: Atualizado em
@@ -20,4 +29,17 @@ pt-BR:
         email: Email
         password: Senha
         password_confirmation: Confirmação de Senha
+      subject:
+        id: Código
+        description: Descrição
+      question:
+        id: Código
+        description: Descrição
+        subject: Assunto
+        subject_id: Assunto
+      answer:
+        id: Código
+        description: Descrição
+        question: Pergunta
+        question_id: Pergunta
       # will translate User attribute "login" as "Handle"
