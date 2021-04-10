@@ -42,4 +42,5 @@ pt-BR:
         description: Descrição
         question: Pergunta
         question_id: Pergunta
+        correct: Correta
       # will translate User attribute "login" as "Handle"

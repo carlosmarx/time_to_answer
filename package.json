@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "@nathanvda/cocoon": "^1.2.14",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -10,7 +11,6 @@
     "bootstrap": "^4.6.0",
     "fastclick": "^1.0.6",
     "jquery": "^3.6.0",
-    "nprogress": "^0.2.0",
     "popper.js": "^1.16.1",
     "sweetalert2": "^10.15.7",
     "turbolinks": "^5.2.0"
