@@ -1,13 +1,13 @@
-<h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
-
-<% if admin_signed_in? %>
+<div class="jumbotron">
+  <h1>Time to Answer</h1>
+  <% if admin_signed_in? %>
     Admin Logado - <%= current_admin.email %>
-<% elsif user_signed_in? %>    
+  <% elsif user_signed_in? %>    
     Usuário Logado - <%= current_user.email %>
-<% else %>
+  <% else %>
     Fazer Login como: 
     <%= link_to "Admin", admins_backoffice_admins_path %> 
-        ou 
+      ou 
     <%= link_to "Usuário", users_backoffice_welcome_index_path %>
-<% end %>
+  <% end %>
+</div>
