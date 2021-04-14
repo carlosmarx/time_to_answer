@@ -1,13 +1,5 @@
-<div class="jumbotron">
-  <h1>Time to Answer</h1>
-  <% if admin_signed_in? %>
-    Admin Logado - <%= current_admin.email %>
-  <% elsif user_signed_in? %>    
-    Usuário Logado - <%= current_user.email %>
-  <% else %>
-    Fazer Login como: 
-    <%= link_to "Admin", admins_backoffice_admins_path %> 
-      ou 
-    <%= link_to "Usuário", users_backoffice_welcome_index_path %>
-  <% end %>
+<%= render 'site/shared/questions' %>
+
+<div class="justify-content-center align-items-center row">
+  <%= paginate @questions, theme: 'twitter-bootstrap-4' %>
 </div>
