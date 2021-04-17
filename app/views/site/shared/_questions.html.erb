@@ -9,7 +9,7 @@
       <h5 class="card-header">
         <%= link_to site_search_subject_path(question.subject_id, question.subject.description) do %>
           <span class="badge badge-pill badge-info">
-            <%= question.subject.description %>
+            <%= "#{question.subject.description} (#{question.subject.questions_count})" %>
           </span>
         <% end %>
         <%= question.description %>
