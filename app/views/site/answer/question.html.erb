@@ -1,0 +1,9 @@
+<% if @answer.correct %>
+  <div class="alert alert-success" role="alert">
+    Parabéns! Sua resposta está correta!
+  </div>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    Ops! A resposta selecionada não é a correta!
+  </div>
+<% end %>

@@ -1,14 +1,39 @@
-<% @questions.each do |question| %>
-<div class="card mb-3">
-  <h5 class="card-header"><%= question.description %></h5>
-  <div class="card-body">
-    <ul>
-      <% question.answers.each do |answer| %>
-        <li><%= answer.description %></li>
-      <% end %>
-    </ul>
-  </div>
+<div class="alert alert-dark" role="alert">
+  <%= msg_home_questions %>
 </div>
+
+<% @questions.each do |question| %>
+
+  <%= form_with url: site_answer_path, local: false do |form| %>
+    <div class="card mb-3">
+      <h5 class="card-header">
+        <%= link_to site_search_subject_path(question.subject_id, question.subject.description) do %>
+          <span class="badge badge-pill badge-info">
+            <%= question.subject.description %>
+          </span>
+        <% end %>
+        <%= question.description %>
+      </h5>
+      <div class="card-body">
+
+        <% question.answers.each do |answer| %>
+          <div class="form-check">
+            <%= radio_button_tag 'answer_id', answer.id, nil, class:"form-check-input" %>
+            <label class="form-check-label">
+              <%= "#{answer.description}  True? #{answer.correct}" %>
+            </label>
+          </div>
+        <% end %>
+        
+        <hr />
+      
+        <div class="form-group">
+          <%= form.submit "Responder", disable_with: 'Respondendo...', class:"btn btn-secondary", id:"submit_#{question.id}" %>
+        </div>
+      
+      </div>
+    </div>
+  <% end %>
 <% end %>
 
 <div class="justify-content-center align-items-center row">
