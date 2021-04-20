@@ -1,0 +1,81 @@
+<%= form_with(url: users_backoffice_profile_path, model: @user) do |form| %>
+  <div class="card ">
+    <div class="card-header card-header-rose card-header-icon">
+      <div class="card-icon">
+        <i class="material-icons">contacts</i>
+      </div>
+      <h4 class="card-title">Editar Perfil</h4>
+    </div>
+    <div class="card-body ">
+        <div class="row">
+          <div class="col-md-12">
+            <% if @user.errors.any? %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                    <li> <%= message %> </li>
+                    <% end %>
+                </ul>
+                </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <%= form.label :first_name, class:"col-md-3 col-form-label" %>
+          <div class="col-md-9">
+            <div class="form-group has-default bmd-form-group">
+              <%= form.text_field :first_name, class:"form-control", placeholder: "Nome"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <%= form.label :last_name, class:"col-md-3 col-form-label" %>
+          <div class="col-md-9">
+            <div class="form-group has-default bmd-form-group">
+              <%= form.text_field :last_name, class:"form-control", placeholder: "Nome"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <%= form.label :email, class:"col-md-3 col-form-label" %>
+          <div class="col-md-9">
+            <div class="form-group has-default bmd-form-group">
+              <%= form.text_field :email, class:"form-control", placeholder: "Seu email"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <%= form.label :password, class:"col-md-3 col-form-label" %>
+          <div class="col-md-9">
+            <div class="form-group has-default bmd-form-group">
+              <%= form.password_field :password, class:"form-control", placeholder: "Senha"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <%= form.label :password_confirmation, class:"col-md-3 col-form-label" %>
+          <div class="col-md-9">
+            <div class="form-group has-default bmd-form-group">
+              <%= form.password_field :password_confirmation, class:"form-control", placeholder: "Confirmação de senha"%>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    <div class="card-footer ">
+      <div class="row">
+        <div class="col-md-9">
+          <%= form.submit "Salvar", class:"btn btn-fill btn-rose" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
