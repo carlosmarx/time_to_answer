@@ -34,6 +34,21 @@
                   <div class="sidebar-brand-text mx-3">Time <sup>to</sup> Answer</div>
               </a>
 
+              <hr class="sidebar-divider my-0">
+
+              <!-- Nav Item - Dashboard -->
+              <li class="nav-item" >
+                <span class="nav-link d-flex flex-column align-items-center justify-content-center">
+                    <div class="avatar avatar-lg ">
+                      <a href="#">
+                        <%= image_tag("https://via.placeholder.com/75", class:"avatar-img img-fluid rounded-circle", data:{toggle: "modal", target:"#pictureModal"})
+                        %>
+                      </a>
+                    </div>
+                    <span class="mt-2"><%= current_admin.email %></span>
+                </span>
+              </li>
+
               <!-- Divider -->
               <hr class="sidebar-divider my-0">
 
@@ -294,7 +309,7 @@
                           <li class="nav-item dropdown no-arrow">
                               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <%= current_admin.email %> </span>
                                       <%= image_tag "sb-admin/undraw_profile.svg", class:'img-profile rounded-circle' %>
                               </a>
                               <!-- Dropdown - User Information -->
@@ -361,24 +376,38 @@
       </a>
 
       <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                  <div class="modal-footer">
-                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                      <a class="btn btn-primary" href="login.html">Logout</a>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to profile picture -->
+    <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload imagem de Perfil</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save changes</button></div>
+            </div>
+        </div>
+    </div>
 
       <!-- Bootstrap core JavaScript-->
       <%= javascript_pack_tag 'application' %>
