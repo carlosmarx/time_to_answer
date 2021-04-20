@@ -51,6 +51,60 @@
           </div>
         </div>
 
+        <%= form.fields_for :user_profile, @user.user_profile do |profile_form| %>
+          <div class="row">
+            <%= profile_form.label :address, class:"col-md-3 col-form-label" %>
+            <div class="col-md-9">
+              <div class="form-group has-default bmd-form-group">
+                <%= profile_form.text_field :address, class:"form-control", placeholder: "Seu endereço"%>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <%= profile_form.label :gender, class:"col-md-3 col-form-label" %>
+            <div class="col-md-9">
+              <div class="form-group has-default bmd-form-group">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= profile_form.radio_button :gender, 'M', class:"form-check-input" %> Masculino
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= profile_form.radio_button :gender, 'F', class:"form-check-input" %> Feminino
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= profile_form.radio_button :gender, 'O', class:"form-check-input" %> Outro
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <%= profile_form.label :birthdate, class:"col-md-3 col-form-label" %>
+            <div class="col-md-9">
+              <div class="form-group has-default bmd-form-group">
+                <%= profile_form.date_field :birthdate, class:"form-control", placeholder: "Seu email"%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
         <div class="row">
           <%= form.label :password, class:"col-md-3 col-form-label" %>
           <div class="col-md-9">
