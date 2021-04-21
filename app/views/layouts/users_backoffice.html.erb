@@ -31,6 +31,18 @@
       <div class="sidebar-wrapper">
       
         <ul class="nav">
+          <li class="nav-item" >
+            <span class="nav-link d-flex flex-column align-items-center justify-content-center">
+                <div class="avatar avatar-lg ">
+                  <a href="#">
+                    <%= image_tag(avatar_url, class:"avatar-img img-fluid rounded-circle", data:{toggle: "modal", target:"#pictureModal"}, width: '75px')
+                    %>
+                  </a>
+                </div>
+                <span class="mt-2"><%= current_user.full_name %></span>
+            </span>
+          </li>
+          <hr />
           <li class="nav-item  ">
             <%= link_to users_backoffice_welcome_index_path, class:"nav-link" do %>
               <i class="material-icons">dashboard</i>
@@ -165,6 +177,37 @@
 
     </div>
   </div>
+
+    <!-- Modal to profile picture -->
+    <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <%= form_with(url: users_backoffice_profile_path, model: current_user) do |form| %>
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Upload imagem de Perfil</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
+                  <div class="modal-body">
+                    <%= form.fields_for :user_profile, current_user.user_profile do |profile_form| %>
+                      <div class="row d-flex align-items-center justify-content-center">
+                        <%= image_tag(avatar_url,
+                        class:"img-thumbnail avatar-img img-fluid rounded-circle",
+                        width: '150px') %>
+                      </div>
+                      <hr />
+                      <div class="row">
+                            <%= profile_form.file_field :avatar, class:"form-control-file" %>
+                      </div>
+
+                    <% end %>
+                  </div>
+                  <div class="modal-footer">
+                    <%= form.submit "Salvar", class:"btn btn-fill btn-rose" %>
+                  </div>
+              <% end %>
+            </div>
+        </div>
+    </div>
   
 
   <%= javascript_pack_tag 'application' %>

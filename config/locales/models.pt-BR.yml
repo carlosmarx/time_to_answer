@@ -36,6 +36,7 @@ pt-BR:
         address: Endereço
         gender: Sexo
         birthdate: Data de Nascimento
+        avatar: Foto de perfil
       subject:
         id: Código
         description: Descrição
