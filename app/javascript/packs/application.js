@@ -19,3 +19,6 @@ Rails.start()
 ActiveStorage.start()
 require("@nathanvda/cocoon")
 
+window.jQuery = $;
+window.$ = $;
+

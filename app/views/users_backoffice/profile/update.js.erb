@@ -1,0 +1,12 @@
+$('#pictureModal').modal('hide')
+
+document.getElementById('imgProfileAvatarSide').src = "<%= url_for(@user.user_profile.avatar) %>"
+document.getElementById('imgProfileAvatarModal').src = "<%= url_for(@user.user_profile.avatar) %>"
+
+Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Avatar atualizado com sucesso!',
+    showConfirmButton: false,
+    timer: 1500
+})
