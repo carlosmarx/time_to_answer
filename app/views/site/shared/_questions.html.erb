@@ -36,6 +36,12 @@
   <% end %>
 <% end %>
 
-<div class="justify-content-center align-items-center row">
-  <%= paginate @questions, theme: 'twitter-bootstrap-4' %>
-</div>
+<% if user_signed_in? %>
+  <div class="justify-content-center align-items-center row">
+    <%= paginate @questions, theme: 'twitter-bootstrap-4' %>
+  </div>
+<% else %>
+  <div class="alert alert-warning" role="alert">
+    Efetue o login para poder continuar respondendo as questões... 
+  </div>
+<% end %>
