@@ -1,133 +1,76 @@
+
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="card card-stats">
+      <div class="card-header card-header-success card-header-icon">
+        <div class="card-icon">
+          <i class="material-icons">verified</i>
+        </div>
+        <p class="card-category">Questões Corretas</p>
+        <h3 class="card-title"><%= @user_statistiscs.right_questions %></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          Total de questões respondidas corretamente
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="card card-stats">
+      <div class="card-header card-header-danger card-header-icon">
+        <div class="card-icon">
+          <i class="material-icons">dangerous</i>
+        </div>
+        <p class="card-category">Questões Erradas</p>
+        <h3 class="card-title"> <%= @user_statistiscs.wrong_questions %> </h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          Total de questões respondidas incorretas
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="card card-stats">
+      <div class="card-header card-header-info card-header-icon">
+        <div class="card-icon">
+          <i class="material-icons">question_answer</i>
+        </div>
+        <p class="card-category">Total</p>
+        <h3 class="card-title"><%= @user_statistiscs.total_questions %>
+        </h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          Total de questões repondidas no sistema
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="card">
   <div class="card-header card-header-icon card-header-rose">
     <div class="card-icon">
       <i class="material-icons">assignment</i>
     </div>
-    <h4 class="card-title ">List Users</h4>
+    <h4 class="card-title ">Estatísticas de Usuário</h4>
   </div>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table">
-        <thead class=" text-primary">
-          <tr><th>
-            ID
-          </th>
-          <th>
-            Name
-          </th>
-          <th>
-            Country
-          </th>
-          <th>
-            City
-          </th>
-          <th>
-            Salary
-          </th>
-        </tr></thead>
+        
         <tbody>
           <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Dakota Rice
-            </td>
-            <td>
-              Niger
-            </td>
-            <td>
-              Oud-Turnhout
-            </td>
-            <td>
-              $36,738
-            </td>
+            <td>1</td>
+            <td>Dakota Rice</td>
+            <td>Niger</td>
+            <td>Oud-Turnhout</td>
+            <td>$36,738</td>
           </tr>
-          <tr>
-            <td>
-              2
-            </td>
-            <td>
-              Minerva Hooper
-            </td>
-            <td>
-              Curaçao
-            </td>
-            <td>
-              Sinaai-Waas
-            </td>
-            <td>
-              $23,789
-            </td>
-          </tr>
-          <tr>
-            <td>
-              3
-            </td>
-            <td>
-              Sage Rodriguez
-            </td>
-            <td>
-              Netherlands
-            </td>
-            <td>
-              Baileux
-            </td>
-            <td>
-              $56,142
-            </td>
-          </tr>
-          <tr>
-            <td>
-              4
-            </td>
-            <td>
-              Philip Chaney
-            </td>
-            <td>
-              Korea, South
-            </td>
-            <td>
-              Overland Park
-            </td>
-            <td>
-              $38,735
-            </td>
-          </tr>
-          <tr>
-            <td>
-              5
-            </td>
-            <td>
-              Doris Greene
-            </td>
-            <td>
-              Malawi
-            </td>
-            <td>
-              Feldkirchen in Kärnten
-            </td>
-            <td>
-              $63,542
-            </td>
-          </tr>
-          <tr>
-            <td>
-              6
-            </td>
-            <td>
-              Mason Porter
-            </td>
-            <td>
-              Chile
-            </td>
-            <td>
-              Gloucester
-            </td>
-            <td>
-              $78,615
-            </td>
-          </tr>
+          
         </tbody>
       </table>
     </div>
