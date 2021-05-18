@@ -1,25 +1,41 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+ <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.hidden_field :reset_password_token %>
+    <div class="card card-login card-hidden">
+      <div class="card-header card-header-rose text-center">
+        <h4 class="card-title">Altere sua senha.</h4>
+        
+      </div>
+      <div class="card-body ">
+        <div class="bmd-form-group" class="mb-2">
+          <%= render "users/shared/error_messages", resource: resource %>
+        </div>
+        <div class="bmd-form-group" class="mb-2">
+          <div class="text-center">
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
+        
+        <div class="bmd-form-group">
+          <div class="input-group">
+          
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder:"Senha", class:"form-control" %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
+        <div class="bmd-form-group">
+          <div class="input-group">
+            
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirme a senha", class:"form-control" %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+        
+        
+      </div>
+      <div class="card-footer justify-content-center">
+        <%= f.submit "Altere minha senha.", class:"btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>

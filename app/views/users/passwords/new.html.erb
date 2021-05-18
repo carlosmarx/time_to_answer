@@ -1,16 +1,38 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="card card-login card-hidden">
+      <div class="card-header card-header-rose text-center">
+        <h4 class="card-title">Esqueceu a senha?</h4>
+        
+      </div>
+      <div class="card-body ">
+        <div class="bmd-form-group" class="mb-2">
+          <%= render "users/shared/error_messages", resource: resource %>
+        </div>
+        <div class="bmd-form-group" class="mb-2">
+          <div class="text-center">
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
+        <div class="bmd-form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="material-icons">email</i>
+              </span>
+            </div>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email...", class:"form-control" %>
+          </div>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+        
+        
+      </div>
+      <div class="card-footer justify-content-center">
+        <%= f.submit "Envi-me as instruções para resetar a senha.", class:"btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>
